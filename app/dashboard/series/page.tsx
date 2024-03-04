@@ -20,7 +20,7 @@ interface Series {
 export default function ComicsPage() {
   const [series, setSeries] = useState<Series[]>([]);
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('a');
+  const [search, setSearch] = useState('');
   const limit = 12;
 
   useEffect(() => {
@@ -44,14 +44,17 @@ export default function ComicsPage() {
 
   return (
     <div>
+      <div>
+        <h1 className="py-4 pb-10 text-4xl font-semibold">Séries</h1>
+      </div>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="mb-4 rounded border border-gray-300 p-2"
-        placeholder="Search series"
+        className="mb-4 rounded border border-gray-400 p-2"
+        placeholder='"X-Men"'
       />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 pb-10 pt-10 sm:grid-cols-2 md:grid-cols-4">
         {series.map((serie) => (
           <div key={serie.id} className="rounded-lg border border-gray-300 p-4">
             <Image
@@ -71,13 +74,13 @@ export default function ComicsPage() {
       <div className="mt-4">
         <button
           onClick={() => setPage((prevPage) => Math.max(prevPage - 1, 1))}
-          className="mr-4 rounded bg-blue-500 px-4 py-2 text-white"
+          className="mr-4 rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
         >
           Página Anterior
         </button>
         <button
           onClick={() => setPage((prevPage) => prevPage + 1)}
-          className="rounded bg-blue-500 px-4 py-2 text-white"
+          className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
         >
           Próxima Página
         </button>
