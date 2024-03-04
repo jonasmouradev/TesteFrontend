@@ -45,7 +45,9 @@ export default function ComicsPage() {
   return (
     <div>
       <div>
-        <h1 className="py-4 pb-10 text-4xl font-semibold">Quadrinhos</h1>
+        <h1 className="py-4 pb-10 font-sans text-4xl font-semibold">
+          Quadrinhos
+        </h1>
       </div>
       <input
         type="text"
@@ -56,17 +58,21 @@ export default function ComicsPage() {
       />
       <div className="grid grid-cols-1 gap-4 pb-10 pt-10 sm:grid-cols-2 md:grid-cols-4">
         {comics.map((comic) => (
-          <div key={comic.id} className="rounded-lg border border-red-300 p-4">
+          <div key={comic.id} className="rounded-lg border border-gray-300 ">
             <Image
               width={1000}
               height={1000}
               src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
               alt={comic.title}
-              className="h-auto w-full"
+              className="h-96 w-full"
             />
-            <h2 className="mb-1 mt-2 text-lg font-semibold">{comic.title}</h2>
-            <p className="text-sm text-gray-700">
-              {comic.description || 'No description available.'}
+            <h2 className="mb-1 mt-2 p-4 text-lg  font-semibold">
+              {comic.title}
+            </h2>
+            <p className="p-4 text-sm text-gray-700">
+              {comic.description
+                ? comic.description.substring(0, 500)
+                : 'No description available.'}
             </p>
           </div>
         ))}
@@ -80,7 +86,7 @@ export default function ComicsPage() {
         </button>
         <button
           onClick={() => setPage((prevPage) => prevPage + 1)}
-          className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
+          className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600 "
         >
           Próxima Página
         </button>

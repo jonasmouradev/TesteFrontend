@@ -45,7 +45,7 @@ export default function ComicsPage() {
   return (
     <div>
       <div>
-        <h1 className="py-4 pb-10 text-4xl font-semibold">Séries</h1>
+        <h1 className=" py-4 pb-10 text-4xl font-semibold">Séries</h1>
       </div>
       <input
         type="text"
@@ -56,17 +56,21 @@ export default function ComicsPage() {
       />
       <div className="grid grid-cols-1 gap-4 pb-10 pt-10 sm:grid-cols-2 md:grid-cols-4">
         {series.map((serie) => (
-          <div key={serie.id} className="rounded-lg border border-gray-300 p-4">
+          <div key={serie.id} className="rounded-lg border border-gray-300 ">
             <Image
               width={1000}
               height={1000}
               src={`${serie.thumbnail.path}.${serie.thumbnail.extension}`}
               alt={serie.title}
-              className="h-auto w-full"
+              className="h-96 w-full"
             />
-            <h2 className="mb-1 mt-2 text-lg font-semibold">{serie.title}</h2>
-            <p className="text-sm text-gray-700">
-              {serie.description || 'No description available.'}
+            <h2 className="mb-1 mt-2 p-4 text-lg font-semibold">
+              {serie.title}
+            </h2>
+            <p className="p-4 text-sm text-gray-700">
+              {serie.description
+                ? serie.description.substring(0, 500)
+                : 'No description available.'}
             </p>
           </div>
         ))}

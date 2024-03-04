@@ -6,20 +6,23 @@ import Image from 'next/image';
 export default function SideNav() {
   return (
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
-      <Link
-        className="mb-3 flex h-20 items-end justify-start p-0 md:h-40"
-        href="/dashboard"
-      >
-        <div>
-          <Image width={500} height={500} src={'/marvel.png'} alt={'Marvel'} />
+
+        <div className="hidden pb-20 pt-10 md:block">
+          <Image
+            width={500}
+            height={500}
+            src={'/marvellogo.png'}
+            alt={'Marvel'}
+            className="hidden md:block"
+          />
         </div>
-      </Link>
-      <div className="bg-gray flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
+
+      <div className=" bg-gray flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
         <NavLinks />
-        <div className="hidden h-auto w-full grow rounded-md bg-gray-100 md:block"></div>
+        <div className="hidden h-auto w-full grow rounded-md  md:block"></div>
         <form>
           <Link href="/">
-            <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-100 p-3 text-sm font-medium hover:bg-red-300 hover:text-red-600 md:flex-none md:justify-start md:p-2 md:px-3">
+            <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-red-300 hover:text-red-600 md:flex-none md:justify-start md:p-2 md:px-3">
               <PowerIcon className="w-6" />
               <div className="hidden md:block">Sair</div>
             </button>

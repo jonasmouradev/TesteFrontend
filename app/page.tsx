@@ -5,8 +5,8 @@ import Image from 'next/image';
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
-      <div className="flex h-20 shrink-0 items-end rounded-lg bg-white p-4 md:h-52">
-        <Image src="/marvel.png" width={350} height={200} alt="Acme Logo" />
+      <div className="flex hidden h-20 shrink-0 items-end rounded-lg bg-white p-4 md:block md:h-52">
+        <Image src="/marvellogo.png" width={350} height={200} alt="Acme Logo" />
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-white px-6 py-10 md:w-2/5 md:px-20">
@@ -28,11 +28,9 @@ export default function Page() {
             src={'/ironman.png'}
             width={800}
             height={500}
-            className="hidden md:block"
+            
             alt="Screenshots of the dashboard project showing desktop version"
           />
-
-          
         </div>
       </div>
     </main>
