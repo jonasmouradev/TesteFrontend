@@ -15,10 +15,10 @@ const links = [
   { name: 'Personagens', href: '/dashboard', icon: UserGroupIcon },
   {
     name: 'Series',
-    href: '/dashboard/invoices',
+    href: '/dashboard/series',
     icon: TvIcon,
   },
-  { name: 'Quadrinhos', href: '/dashboard/customers', icon: BookOpenIcon },
+  { name: 'Quadrinhos', href: '/dashboard/comics', icon: BookOpenIcon },
 ];
 
 export default function NavLinks() {

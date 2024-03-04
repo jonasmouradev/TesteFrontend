@@ -21,7 +21,7 @@ export default function ComicsPage() {
   const [comics, setComics] = useState<Comic[]>([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('a');
-  const limit = 12;
+  const limit = 19;
 
   useEffect(() => {
     const publicKey = 'e9f43d1c48aff61868b136f48cdffb2a';
